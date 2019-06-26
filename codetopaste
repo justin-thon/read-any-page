@@ -1,0 +1,1 @@
+python -c "url=input('Enter url: '); import lxml.html,pprint, requests, re; page=requests.get(url); doc=lxml.html.document_fromstring(page.content); doc=doc.xpath('//p'); import re; doc=[ re.sub('[^a-zA-Z0-9]+', ' ', x.text_content()) for x in doc];doc= '\n\n'.join(doc); print(doc)"
